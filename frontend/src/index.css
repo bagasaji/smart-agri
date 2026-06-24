@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #F0F7F4;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(82, 183, 136, 0.2);
+  border-radius: 20px;
+}
+
+.glass-card-dark {
+  background: rgba(27, 67, 50, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(82, 183, 136, 0.3);
+  border-radius: 20px;
+}
+
+/* Gradient backgrounds */
+.bg-agri-hero {
+  background: linear-gradient(135deg, #1B4332 0%, #2D6A4F 40%, #40916C 70%, #52B788 100%);
+}
+
+.bg-agri-section {
+  background: linear-gradient(180deg, #F0F7F4 0%, #E8F5EE 100%);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #F0F7F4; }
+::-webkit-scrollbar-thumb { background: #52B788; border-radius: 3px; }
+
+/* React Flow */
+.react-flow__node {
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* Animations */
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(82, 183, 136, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(82, 183, 136, 0); }
+}
+.pulse-green { animation: pulse-green 2s infinite; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+.float { animation: float 3s ease-in-out infinite; }
+
+/* Wizard step */
+.step-indicator {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+.step-active { background: #1B4332; color: white; }
+.step-done { background: #52B788; color: white; }
+.step-inactive { background: #E8F5EE; color: #74C69D; }
+
+/* Gauge chart base */
+.gauge-container { position: relative; display: inline-flex; align-items: center; justify-content: center; }
+
+/* Mobile touch */
+@media (max-width: 768px) {
+  body { font-size: 16px; }
+  .mobile-full { width: 100% !important; }
+}
