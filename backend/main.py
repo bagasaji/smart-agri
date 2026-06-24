@@ -355,10 +355,6 @@ def get_soil_status(key: str, val: float) -> dict:
 async def startup():
     model_mgr.load()
 
-@app.get("/")
-def root():
-    return {"status": "online", "system": "Smart Agriculture AI", "version": "2.0.0"}
-
 @app.get("/api/health")
 def health():
     return {
